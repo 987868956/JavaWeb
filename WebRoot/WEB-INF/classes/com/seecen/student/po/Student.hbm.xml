@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.seecen.student.po">
+	<class name="Student" table="t5_crm_Student">
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">t5_crm_seq_Student</param>
+			</generator>
+		</id>
+
+		<property name="name"/>
+		<many-to-one name="classId" class="com.seecen.teach.po.Course" lazy="false"/>
+
+		<property name="sex" />
+		<property name="birthDate" />
+		<property name="college" />
+		<property name="education" />
+		<property name="major" />
+		<property name="origin" />
+		<property name="telephone" />
+		<property name="admissionDate" />
+		<property name="IDCard" />
+		<property name="note" />
+
+	</class>
+</hibernate-mapping>

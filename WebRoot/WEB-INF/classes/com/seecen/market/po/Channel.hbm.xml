@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="com.seecen.market.po">
+	<class name="Channel" table="T5_CRM_Channel">
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">T5_CRM_SEQ_Channel</param>
+			</generator>
+		</id>
+		<property name="name"></property>
+		<many-to-one name="parentChannel" class="Channel" column="parentId" lazy="false"></many-to-one>
+		<set name="sonChannel" lazy="false">
+				<key column="parentId" />
+				<one-to-many class="Channel"/>
+			</set>
+		<property name="status"></property>
+		<property name="modifyTime"></property>
+	</class>
+
+
+</hibernate-mapping>

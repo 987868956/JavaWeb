@@ -1,0 +1,29 @@
+1.	项目名 SeecenCRM
+
+2.	模块名
+系统管理  system
+学员管理  student
+教学管理  teach
+营销管理  market
+
+3.	包名   
+com.seecen.模块名.po          实体类
+com.seecen.模块名.dao         接口类
+com.seecen.模块名.dao.impl     实现类
+com.seecen.模块名.action       业务逻辑
+com.seecen.utils                工具类
+
+4.	表名
+T5_CRM_表名
+
+5.	序列名
+T5_CRM_序列名
+
+6.	JSP页面
+WebRoot下创建文件夹,用模块名命名
+
+7.	Spring
+ApplicationContext-模块名.xml     例如系统模块: ApplicationContext-system.xml
+
+8.	Struts2
+在各个模块的action包下创建一个struts2.xml 命名规范:struts2-模块名.xml    例如学员模块:struts2-student.xml

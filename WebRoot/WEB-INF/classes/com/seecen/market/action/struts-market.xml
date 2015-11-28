@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="centre" namespace="/market" extends="default">
+		<action name="centre" class="centreAction">
+			<result>listCentre2.jsp</result>
+			<result name="listAll" type="redirectAction">centre</result>
+		</action>
+
+		<action name="customer" class="customerAction">
+			<result>listCustomer.jsp</result>
+			<result name="listAll" type="redirectAction">customer</result>
+			<result name="edit">editCustomer.jsp</result>
+		</action>
+
+		<action name="channel" class="channelAction">
+			<result>listChannel.jsp</result>
+			<result name="listAll" type="redirectAction">channel</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="visited" class="visitedAction">
+			<result>editCustomer.jsp</result>
+			<result name="listAll" type="redirectAction">customer</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="index" class="indexAction">
+			<result>main.jsp</result>
+		</action>
+                                                                                                        
+	</package>
+
+
+</struts>

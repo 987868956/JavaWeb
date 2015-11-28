@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="com.seecen.market.po">
+	<class name="Department" table="T5_CRM_Department">
+		<id name="deptid" column="deptid">
+			<generator class="sequence">
+				<param name="sequence">T5_CRM_SEQ_Department</param>
+			</generator>
+		</id>
+		
+		<property name="deptname"></property>
+		<property name="deptAddress"></property>
+		<property name="status"></property>
+		<many-to-one name="centre" class="Centre" column="centreID" cascade="all" lazy="false"></many-to-one>
+		<property name="modifyTime"></property>
+	</class>
+
+
+</hibernate-mapping>

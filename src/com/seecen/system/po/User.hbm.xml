@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.seecen.system.po">
+	<class name="User" table="T5_CRM_User">
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">T5_CRM_seq_User</param>
+			</generator>
+		</id>
+		
+		
+		<property name="userName" column="userName" not-null="true" length="50"/>
+		<property name="pass" />
+		<property name="status" />
+		<property name="sex" />
+		<property name="userTel" />
+		<property name="qq" />
+		<property name="email" />
+
+		
+		<many-to-one name="role" class="Role" column="roleId" lazy="false"></many-to-one> 
+		<many-to-one name="depts" class="com.seecen.market.po.Department"  column="deptid" lazy="false"></many-to-one>
+		<many-to-one name="centers" class="com.seecen.market.po.Centre"  column="centreID" lazy="false"></many-to-one>
+	  
+	</class>
+
+
+</hibernate-mapping>

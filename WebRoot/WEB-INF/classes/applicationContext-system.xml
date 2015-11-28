@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xmlns:tx="http://www.springframework.org/schema/tx"        
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+    
+     <bean name="moudleDao" class="com.seecen.system.Impl.MoudleDaoImpl">
+     	<property name="sessionFactory" ref="sessionFactory"></property>
+     </bean>
+     
+       <bean name="moudleAction" class="com.seecen.system.action.MoudleAction">
+     	<property name="moudleDao" ref="moudleDao"></property>
+      </bean>
+     
+     
+      <bean name="roleDao" class="com.seecen.system.Impl.RoleDaoImpl">
+     	<property name="sessionFactory" ref="sessionFactory"></property>
+     </bean>
+     
+     
+     <bean name="RoleAction" class="com.seecen.system.action.RoleAction">
+     	<property name="roleDao" ref="roleDao"></property>
+      </bean>
+   
+      <bean name="roleAuthDao" class="com.seecen.system.Impl.RoleAuthDaoImpl">
+     	<property name="sessionFactory" ref="sessionFactory"></property>
+     </bean>
+     
+     <bean name="AuthAction" class="com.seecen.system.action.AuthAction">
+     	<property name="roleAuthDao" ref="roleAuthDao"></property>
+     	<property name="roleDao" ref="roleDao"></property>
+     	<property name="moudleDao" ref="moudleDao"></property>
+      </bean>
+     
+      <bean name="userDao" class="com.seecen.system.Impl.UserDaoImpl">
+     	<property name="sessionFactory" ref="sessionFactory"></property>
+     </bean>
+     
+    <bean name="UserAction" class="com.seecen.system.action.UserAction">
+     	<property name="userDao" ref="userDao"></property>
+     </bean>
+     
+     <bean name="LoginAction" class="com.seecen.system.action.LoginAction">
+     	<property name="userDao" ref="userDao"></property>
+     </bean>
+     
+      <bean name="logDao" class="com.seecen.system.Impl.LogDaoImpl">
+     	<property name="sessionFactory" ref="sessionFactory"></property>
+     </bean>
+      
+      <bean name="LogAction" class="com.seecen.system.action.LogAction">
+     	<property name="logDao" ref="logDao"></property>
+     </bean>
+     
+    <bean name="logInterceptor" class="com.seecen.iterceptor.LogInterceptor">
+    	<property name="logDao" ref="logDao"></property>
+    </bean>
+    
+</beans>

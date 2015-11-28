@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.seecen.system.po">
+	<class name="Log" table="T5_CRM_Log">
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">T5_CRM_seq_Log</param>
+			</generator>
+		</id>
+		
+		<property name="event" length="2000" />
+		<property name="logDate" />
+		
+		<many-to-one name="user" class="User" column="userId" lazy="false"></many-to-one> 
+		
+	</class>
+
+
+</hibernate-mapping>

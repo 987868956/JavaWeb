@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.seecen.student.po">
+	<class name="Employment" table="t5_crm_Employment">
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">t5_crm_seq_Employment</param>
+			</generator>
+		</id>
+
+		<many-to-one name="sid" class="com.seecen.student.po.Student" lazy="false"/>
+
+		<property name="workUnit" />
+		<property name="post" />
+		<property name="workAddress" />
+		<property name="workDate" />
+		<property name="salary" />
+
+	</class>
+</hibernate-mapping>

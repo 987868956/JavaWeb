@@ -1,0 +1,6 @@
+学员管理
+	学员信息：/SeecenCRM/student/student
+	考勤情况：/SeecenCRM/student/attendance
+	面谈情况：/SeecenCRM/student/consult
+	模拟面试：/SeecenCRM/student/interview
+	项目评审：/SeecenCRM/student/review

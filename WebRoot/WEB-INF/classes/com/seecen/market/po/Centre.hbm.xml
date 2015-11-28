@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="com.seecen.market.po">
+	<class name="Centre" table="T5_CRM_Centre">
+		<id name="cid" column="cid">
+			<generator class="sequence">
+				<param name="sequence">T5_CRM_SEQ_Centre</param>
+			</generator>
+		</id>
+		<property name="cname"></property>
+		<property name="caddress"></property>
+		<property name="ctelephone"></property>
+		<property name="status"></property>
+		<property name="homePage"></property>
+		<property name="modifyTime"></property>
+	</class>
+
+
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.seecen.teach.po">
+	<class name="Course" table="t5_crm_course">
+        <id name="id" column="id">
+            <generator class="sequence">
+            	<param name="sequence">t5_crm_seq_course</param>
+            </generator>
+        </id>
+        <property name="className" not-null="true" length="40"/>
+        <property name="openTime" not-null="true" length="20"/>
+        <property name="count" not-null="true"/>
+        <property name="classroom" not-null="true" length="20"/>
+        <property name="status"/>
+        
+        <many-to-one name="centre" class="com.seecen.market.po.Centre" column="centre" lazy="false"/>
+        <many-to-one name="lecturer" class="com.seecen.system.po.User" lazy="false"/>
+        <many-to-one name="develop" class="com.seecen.system.po.User" column="develop" lazy="false"/>
+    </class>
+</hibernate-mapping>

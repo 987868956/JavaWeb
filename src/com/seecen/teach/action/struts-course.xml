@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<!--localhost:8080/工程名/namespace/action name!result name-->
+    <package name="course" namespace="/course" extends="default">
+    	<action name="course" class="courseAction">
+    		<result>/teach/course.jsp</result>
+    		<result name="add" type="redirectAction">course</result>
+    		<result name="update" type="redirectAction">course/</result>
+    		<result name="listAll" type="redirectAction">course</result>
+    		<result name="error">/error.jsp</result>
+    	</action>
+    	
+    	<action name="activity" class="activityAction">
+    		<result>/teach/activity.jsp</result>
+    		<result name="add" type="redirectAction">activity</result>
+    		<result name="listAll" type="redirectAction">activity</result>
+    	</action>
+    	
+    	<action name="export" class="exportAction">
+                 <result>/teach/course.jsp</result>
+        </action>
+    </package>
+</struts>

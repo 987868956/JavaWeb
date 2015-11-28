@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xmlns:tx="http://www.springframework.org/schema/tx"        
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+    
+	<bean name="attendanceDao" class="com.seecen.student.dao.impl.AttendanceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean name="attendanceAction" class="com.seecen.student.action.AttendanceAction">
+		<property name="attendanceDao" ref="attendanceDao"/>
+	</bean>
+	
+	<bean name="consultDao" class="com.seecen.student.dao.impl.ConsultDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean name="consultAction" class="com.seecen.student.action.ConsultAction">
+		<property name="consultDao" ref="consultDao"/>
+	</bean>
+	
+	<bean name="employmentDao" class="com.seecen.student.dao.impl.EmploymentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean name="employmentAction" class="com.seecen.student.action.EmploymentAction">
+		<property name="employmentDao" ref="employmentDao"/>
+	</bean>
+	
+	<bean name="interviewDao" class="com.seecen.student.dao.impl.InterviewDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean name="interviewAction" class="com.seecen.student.action.InterviewAction">
+		<property name="interviewDao" ref="interviewDao"/>
+	</bean>
+	
+	<bean name="reviewDao" class="com.seecen.student.dao.impl.ReviewDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean name="reviewAction" class="com.seecen.student.action.ReviewAction">
+		<property name="reviewDao" ref="reviewDao"/>
+	</bean>
+	
+	<bean name="studentDao" class="com.seecen.student.dao.impl.StudentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="studentAction" class="com.seecen.student.action.StudentAction">
+		<property name="studentDao" ref="studentDao"/>
+	</bean>
+
+	<bean name="empExAction" class="com.seecen.teach.excel.EmployExport">
+		<property name="employmentDao" ref="employmentDao"/>
+	</bean>
+	
+</beans>

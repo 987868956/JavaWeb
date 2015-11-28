@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+
+	<package name="default" namespace="/" extends="struts-default">
+               
+                <interceptors>
+                  <interceptor name="log" class="com.seecen.iterceptor.LogInterceptor"></interceptor>
+                  
+                  <interceptor-stack name="mystack">
+	                  <interceptor-ref name="log"></interceptor-ref>
+	                  <interceptor-ref name="defaultStack"></interceptor-ref>
+                  </interceptor-stack>
+               </interceptors>
+              <default-interceptor-ref name="mystack"></default-interceptor-ref>
+	            
+	</package>
+	
+	<include file="com/seecen/system/action/struts-system.xml"></include>
+	<include file="com/seecen/market/action/struts-market.xml"></include>
+	<include file="com/seecen/student/action/struts-student.xml"></include>
+	<include file="com/seecen/system/action/struts-system.xml"></include>
+	<include file="com/seecen/teach/action/struts-course.xml"></include>
+	<!-- 班级 -->
+	<include file="com/seecen/teach/action/struts-course.xml"></include>
+	
+</struts>

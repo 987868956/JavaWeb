@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.seecen.system.po">
+	<class name="Role" table="T5_CRM_Role">
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">T5_CRM_seq_Role</param>
+			</generator>
+		</id>
+		
+		<property name="name" column="RoleName" not-null="true" length="50"/>
+		<property name="status" />
+		
+	   <set name="moudles" table="T5_CRM_roleAuth" lazy="false">
+	     <key column="roleId"/>
+	      <many-to-many class="Moudle" column="moudleId"/>
+	   </set>
+	
+	</class>
+
+
+</hibernate-mapping>

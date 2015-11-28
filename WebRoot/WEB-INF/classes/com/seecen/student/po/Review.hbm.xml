@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.seecen.student.po">
+	<class name="Review" table="t5_crm_Review">
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">t5_crm_seq_Review</param>
+			</generator>
+		</id>
+
+		<many-to-one name="userId" class="com.seecen.system.po.User" lazy="false"/>
+		<many-to-one name="sid" class="com.seecen.student.po.Student" lazy="false"/>
+
+		<property name="createDate" />
+		<property name="projectName" />
+		<property name="projectPhase" />
+		<property name="suitEtiquetteScore" />
+		<property name="explainScore" />
+		<property name="replyScore" />
+
+	</class>
+</hibernate-mapping>

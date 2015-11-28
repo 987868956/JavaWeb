@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xmlns:tx="http://www.springframework.org/schema/tx"        
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+    
+     <bean name="marketDao" class="com.seecen.market.dao.impl.CentreDaoImpl">
+     	<property name="sessionFactory" ref="sessionFactory"></property>
+     </bean>
+     
+      <bean name="deptDao" class="com.seecen.market.dao.impl.DepartmentDaoImpl">
+     	<property name="sessionFactory" ref="sessionFactory"></property>
+     </bean>
+     
+        <bean name="customerDao" class="com.seecen.market.dao.impl.CustomerDaoImpl">
+     	<property name="sessionFactory" ref="sessionFactory"></property>
+     </bean>
+     
+     <bean name="channelDao" class="com.seecen.market.dao.impl.ChannelDaoImpl">
+     	<property name="sessionFactory" ref="sessionFactory"></property>
+     </bean>
+     
+     <bean name="visitedDao" class="com.seecen.market.dao.impl.VisitedDaoImpl">
+     	<property name="sessionFactory" ref="sessionFactory"></property>
+     </bean>
+     
+     <bean name="centreAction" class="com.seecen.market.action.CentreAction">
+     	<property name="marketDao" ref="marketDao"></property>
+     </bean>
+     
+    <bean name="customerAction" class="com.seecen.market.action.CustomerAction">
+     	<property name="customerDao" ref="customerDao"></property>
+     
+     </bean>
+     
+      <bean name="channelAction" class="com.seecen.market.action.ChannelAction">
+     	<property name="channelDao" ref="channelDao"></property>
+     
+     </bean>
+     
+       <bean name="visitedAction" class="com.seecen.market.action.VisitedAction">
+     	<property name="visitedDao" ref="visitedDao"></property>
+     
+     </bean>
+     
+      <bean name="indexAction" class="com.seecen.market.action.IndexAction">
+     	<property name="customerDao" ref="customerDao"></property>
+     </bean>
+    
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="SeecenCRM"
+  id="myeclipse.1444288826868"
+  context-root="/SeecenCRM"
+  j2ee-spec="5.0"
+  archive="SeecenCRM.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

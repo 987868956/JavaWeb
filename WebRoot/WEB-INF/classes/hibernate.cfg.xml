@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		<property name="connection.url">
+			jdbc:oracle:thin:@localhost:1521:orcl
+		</property>
+		<property name="connection.username">scott</property>
+		<property name="connection.password">tiger</property>
+		<property name="connection.pool_size">50</property>
+		<property name="dialect">
+			org.hibernate.dialect.OracleDialect
+		</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="show_sql">true</property>
+		<mapping resource="com/seecen/utils/City.hbm.xml" />
+		<mapping resource="com/seecen/utils/Province.hbm.xml" />
+		
+		<mapping resource="com/seecen/market/po/Centre.hbm.xml" />
+		<mapping resource="com/seecen/market/po/Channel.hbm.xml" />
+		<mapping resource="com/seecen/market/po/Customer.hbm.xml" />
+		<mapping resource="com/seecen/market/po/Department.hbm.xml" />
+		<mapping resource="com/seecen/market/po/Visited.hbm.xml" />
+
+
+
+
+		<mapping resource="com/seecen/system/po/User.hbm.xml" />
+		<mapping resource="com/seecen/system/po/Moudle.hbm.xml" />
+		<mapping resource="com/seecen/system/po/Role.hbm.xml" />
+		<mapping resource="com/seecen/system/po/RoleAuth.hbm.xml" />
+		<mapping resource="com/seecen/system/po/Log.hbm.xml" />
+
+
+
+		<mapping resource="com/seecen/teach/po/Activity.hbm.xml" />
+		<mapping resource="com/seecen/teach/po/Course.hbm.xml" />
+
+		<mapping resource="com/seecen/student/po/Student.hbm.xml" />
+		<mapping resource="com/seecen/student/po/Attendance.hbm.xml" />
+		<mapping resource="com/seecen/student/po/Consult.hbm.xml" />
+		<mapping resource="com/seecen/student/po/Employment.hbm.xml" />
+		<mapping resource="com/seecen/student/po/Interview.hbm.xml" />
+		<mapping resource="com/seecen/student/po/Review.hbm.xml" />
+
+
+
+
+
+	</session-factory>
+
+</hibernate-configuration>

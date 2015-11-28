@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+
+	 <package name="moudle" namespace="/system" extends="default">
+	 
+          <action name="moudle" class="moudleAction">
+                  <result>/system/TestMoudle.jsp</result>
+                  <result name="add" type="redirectAction">moudle</result>
+                  <result name="change" type="redirectAction">moudle</result>
+                  <result name="updata" type="redirectAction">moudle</result>
+                  <result name="input" type="redirectAction">moudle</result>
+                  <result name="del" type="redirectAction">moudle</result>
+                  <result name="error" type="redirectAction">/system/error.jsp</result>
+                 
+                
+          </action>
+          
+          <action name="role" class="RoleAction">
+			<result>RoleList.jsp</result>
+			<result name="add" type="redirectAction">role</result>
+			<result name="updata" type="redirectAction">role</result>
+			<result name="del" type="redirectAction">role</result>
+			<result name="change" type="redirectAction">role</result>
+			
+		</action>
+		
+		
+		
+		 <action name="auth" class="AuthAction">
+			<result>/system/TestAddAuth.jsp</result>
+			<result name="addRoleAuth" type="redirectAction">auth</result>
+			<result name="updataRoleAuth" type="redirectAction">auth</result>
+
+		</action>
+		
+		
+		<action name="user" class="UserAction">
+		    
+			<result>/system/TestUser.jsp</result>
+			<result name="addUser" type="redirectAction">user</result>
+			<result name="changeStatus" type="redirectAction">user</result>
+			<result name="delUser" type="redirectAction">user</result>
+		    <result name="error" type="redirectAction">user</result>
+		    <result name="updata" type="redirectAction">user</result>
+		</action>
+		 
+		  <action name="log" class="LogAction">
+			<result>/system/LogList.jsp</result>
+		</action>
+		
+    </package>
+   
+    <package name="login" namespace="/system" extends="struts-default">
+    	<action name="login" class="LoginAction">
+			<result>main.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+			<result name="error">/error.jsp</result>
+		</action>
+    </package>
+
+	
+	
+</struts>

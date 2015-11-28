@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="com.seecen.market.po">
+	<class name="Customer" table="T5_CRM_Customer">
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">T5_CRM_SEQ_Customer</param>
+			</generator>
+		</id>
+		<property name="name"></property>
+		<property name="sex"></property>
+		<property name="birthday"></property>
+		<property name="telephone"></property>
+		<property name="qq"></property>
+		<property name="email"></property>
+		<property name="schoolName"></property>
+		<property name="collegeName"></property>
+		<property name="reportTime"></property>
+		<property name="createTime"></property>
+		<property name="address"></property>
+		<property name="consultContent" length="3000"></property>
+		<property name="major"></property>
+		<many-to-one name="user" class="com.seecen.system.po.User" column="userID" lazy="false" ></many-to-one>
+		<property name="location"></property>
+		<many-to-one name="centre" class="Centre" column="centreID" lazy="false"></many-to-one>
+		<many-to-one name="channel" class="Channel" column="channelID" lazy="false"></many-to-one>
+		<property name="status"></property>
+		<property name="intention"></property>
+		<property name="modifyTime"></property>
+		
+	</class>
+
+
+</hibernate-mapping>

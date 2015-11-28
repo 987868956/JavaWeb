@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<constant name="struts.devMode" value="true"/>
+	
+	<package name="student" namespace="/student" extends="default">
+		
+		<action name="student" class="studentAction">
+			<result name="list">studentList.jsp</result>
+			<result name="listAll" type="redirectAction">student</result>
+			<result name="error">error.html</result>
+			<result name="input" type="redirectAction">student</result>
+		</action>
+		
+		<action name="attendance" class="attendanceAction">
+			<result name="list">attendanceList.jsp</result>
+			<result name="error">error.html</result>
+			<result name="listAll" type="redirectAction">attendance</result>
+			<result name="delete" type="redirectAction">attendance</result>
+			<result name="input" type="redirectAction">attendance</result>
+		</action>
+		
+		<action name="consult" class="consultAction">
+			<result name="list">consultList.jsp</result>
+			<result name="error">error.html</result>
+			<result name="listAll" type="redirectAction">consult</result>
+			<result name="delete" type="redirectAction">consult</result>
+			<result name="input" type="redirectAction">consult</result>
+		</action>
+		
+		<action name="interview" class="interviewAction">
+			<result name="list">interviewList.jsp</result>
+			<result name="error">error.html</result>
+			<result name="listAll" type="redirectAction">interview</result>
+			<result name="delete" type="redirectAction">interview</result>
+			<result name="input" type="redirectAction">interview</result>
+		</action>
+		
+		<action name="review" class="reviewAction">
+			<result name="list">reviewList.jsp</result>
+			<result name="error">error.html</result>
+			<result name="listAll" type="redirectAction">review</result>
+			<result name="delete" type="redirectAction">review</result>
+			<result name="input" type="redirectAction">review</result>
+		</action>
+		
+		<action name="employment" class="employmentAction">
+			<result name="list">employmentList.jsp</result>
+			<result name="error">error.html</result>
+			<result name="listAll" type="redirectAction">employment</result>
+			<result name="delete" type="redirectAction">employment</result>
+			<result name="input" type="redirectAction">employment</result>
+		</action>
+		
+		<action name="export" class="empExAction">
+			<result>employmentList.jsp</result>
+		</action>
+	</package>
+
+</struts>
